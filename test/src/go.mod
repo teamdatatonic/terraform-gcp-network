@@ -1,4 +1,5 @@
 module gitlab.com/datatonic/templates/terraform-gcp-modules/terraform-gcp-network
+
 go 1.15
 
 require (
