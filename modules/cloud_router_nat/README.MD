@@ -20,7 +20,7 @@ No requirements.
 | nats | One or more NAT services created in a router. | `map(any)` | n/a | yes |
 | network\_name | The name of the vpc network. | `string` | n/a | yes |
 | project\_id | The ID of the project where this firewall rule will be created | `any` | n/a | yes |
-| region | (Optional) Region where the router and NAT reside. | `string` | n/a | yes |
+| region | Region where the router and NAT reside. | `string` | n/a | yes |
 | router\_name | The name of the router. | `string` | n/a | yes |
 
 ## Outputs

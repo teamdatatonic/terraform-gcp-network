@@ -40,6 +40,7 @@ variable "cloud_router_nat_config" {
 }
 
 variable "region" {
-  description = "Region where the router and NAT reside."
+  description = "(Optional) Region where the router and NAT reside."
   type        = string
+  default     = null
 }

@@ -75,7 +75,7 @@ No provider.
 | firewall\_custom\_rules | map of custom rule definitions | `map(any)` | `{}` | no |
 | network\_name | The name of the network being created | `string` | n/a | yes |
 | project\_id | The ID of the project where this VPC will be created | `string` | n/a | yes |
-| region | Region where the router and NAT reside. | `string` | n/a | yes |
+| region | (Optional) Region where the router and NAT reside. | `string` | `null` | no |
 | subnets | The list of subnets to be created. | `list(map(string))` | `[]` | no |
 
 ## Outputs
