@@ -1,6 +1,4 @@
 terraform {
-  required_version = ">= 0.14.3"
-
   required_providers {
     google = {
       version = "~> 3.31"
@@ -10,10 +8,6 @@ terraform {
       version = "~> 3.31"
     }
   }
-
-  backend "gcs" {
-    bucket = "datatonic-devops-play-tfstate"
-    prefix = "terraform-template/state"
-  }
+  required_version = ">= 0.14.3"
 
 }

@@ -40,13 +40,13 @@ security-check:
 terratest:
   stage: test
   image:
-    name: golang:1.15.6-alpine3.12
+    name: golang:1.16.0-alpine3.13
     entrypoint:
       - "/usr/bin/env"
       - "PATH=/go/bin:/usr/local/go/bin/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
       - "CGO_ENABLED=0"
   before_script:
-    - apk add zip jq
+    - apk add zip jq git 
     - TF_ZIP="terraform_${TERRAFORM_VERSION}_linux_amd64.zip"
     - wget "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/${TF_ZIP}"
     - unzip ${TF_ZIP} && rm ${TF_ZIP}
@@ -55,7 +55,7 @@ terratest:
     - echo ${GCP_CREDENTIALS} > key.json
     - export GOOGLE_APPLICATION_CREDENTIALS="${TEST_DIR}/key.json"
   script:
-    - go test -v -timeout 30m 
+    - go test -v -vet=off -timeout 30m 
    
 release:
   image: node:13
