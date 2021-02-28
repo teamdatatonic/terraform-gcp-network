@@ -10,10 +10,4 @@ terraform {
       version = "~> 3.31"
     }
   }
-
-  backend "gcs" {
-    bucket = "datatonic-devops-play-tfstate"
-    prefix = "terraform-template/state"
-  }
-
 }
