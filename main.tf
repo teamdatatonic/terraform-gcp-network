@@ -1,19 +1,19 @@
 module "vpc" {
-  source             = "./modules/vpc"
-  project_id         = var.project_id
-  environment_prefix = var.environment_prefix
-  network_name       = var.network_name
-  description        = var.description
+  source                          = "./modules/vpc"
+  project_id                      = var.project_id
+  environment_prefix              = var.environment_prefix
+  network_name                    = var.network_name
+  routing_mode                    = var.routing_mode
+  delete_default_routes_on_create = var.delete_default_routes_on_create
+  description                     = var.description
 }
 
 module "subnets" {
-  source                          = "./modules/subnets"
-  project_id                      = var.project_id
-  environment_prefix              = var.environment_prefix
-  network_name                    = module.vpc.network_name
-  routing_mode                    = var.routing_mode
-  delete_default_routes_on_create = var.delete_default_routes_on_create
-  subnets                         = var.subnets
+  source             = "./modules/subnets"
+  project_id         = var.project_id
+  environment_prefix = var.environment_prefix
+  network_name       = module.vpc.network_name
+  subnets            = var.subnets
 
 }
 
