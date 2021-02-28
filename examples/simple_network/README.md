@@ -1,7 +1,11 @@
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| terraform | >= 0.14.3 |
+| google | ~> 3.31 |
+| google-beta | ~> 3.31 |
 
 ## Providers
 
