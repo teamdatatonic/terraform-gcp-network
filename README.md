@@ -58,6 +58,7 @@ module "network_stack" {
 | Name | Version |
 |------|---------|
 | terraform | >= 0.14.3 |
+| terraform | >= 0.14.3 |
 | google | ~> 3.31 |
 | google-beta | ~> 3.31 |
 
@@ -69,14 +70,14 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| cloud\_router\_nat\_config | map of objects to config cloud nat & router | `map(any)` | n/a | yes |
-| description | (Optional) An optional description of the VPC network. The resource must be recreated to modify this field. | `string` | n/a | yes |
+| cloud\_router\_nat\_config | map of objects to config cloud nat & router | `map(any)` | `{}` | no |
+| description | (Optional) An optional description of the VPC network. The resource must be recreated to modify this field. | `string` | `null` | no |
 | environment\_prefix | The GCP envioment where the network will be created. | `string` | n/a | yes |
-| firewall\_custom\_rules | map of custom rule definitions | `map(any)` | n/a | yes |
+| firewall\_custom\_rules | map of custom rule definitions | `map(any)` | `{}` | no |
 | network\_name | The name of the network being created | `string` | n/a | yes |
 | project\_id | The ID of the project where this VPC will be created | `string` | n/a | yes |
-| region | (Optional) Region where the router and NAT reside. | `string` | n/a | yes |
-| subnets | The list of subnets to be created. | `list(map(string))` | n/a | yes |
+| region | Region where the router and NAT reside. | `string` | n/a | yes |
+| subnets | The list of subnets to be created. | `list(map(string))` | `[]` | no |
 
 ## Outputs
 
