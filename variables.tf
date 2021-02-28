@@ -10,13 +10,13 @@ variable "environment_prefix" {
 }
 
 variable "firewall_custom_rules" {
-  description = "map of custom rule definitions"
+  description = "map of custom rule definitions."
   type        = map(any)
   default     = {}
 }
 
 variable "network_name" {
-  description = "The name of the network being created"
+  description = "The name of the network being created."
   type        = string
 }
 
@@ -34,7 +34,7 @@ variable "description" {
 }
 
 variable "cloud_router_nat_config" {
-  description = "map of objects to config cloud nat & router"
+  description = "map of objects to config cloud nat & router."
   type        = map(any)
   default     = {}
 }

@@ -1,5 +1,5 @@
 variable "project_id" {
-  description = "The ID of the project where this firewall rule will be created"
+  description = "The ID of the project where this firewall rule will be created."
 }
 
 variable "firewall_custom_rules" {

@@ -1,15 +1,15 @@
 variable "project_id" {
-  description = "The ID of the project where this VPC will be created"
+  description = "The ID of the project where this VPC will be created."
 }
 
 variable "network_name" {
-  description = "The name of the network being created"
+  description = "The name of the network being created."
 }
 
 variable "routing_mode" {
   type        = string
   default     = "GLOBAL"
-  description = "The network routing mode (default 'GLOBAL')"
+  description = "The network routing mode (default 'GLOBAL')."
 }
 
 variable "description" {
@@ -26,7 +26,7 @@ variable "auto_create_subnetworks" {
 
 variable "delete_default_routes_on_create" {
   type        = bool
-  description = "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted"
+  description = "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted,"
   default     = false
 }
 
