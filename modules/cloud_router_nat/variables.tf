@@ -29,6 +29,6 @@ variable "nats" {
 }
 
 variable "region" {
-  description = "(Optional) Region where the router and NAT reside."
+  description = "Region where the router and NAT reside."
   type        = string
 }
