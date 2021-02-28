@@ -7,11 +7,14 @@ module "vpc" {
 }
 
 module "subnets" {
-  source             = "./modules/subnets"
-  project_id         = var.project_id
-  environment_prefix = var.environment_prefix
-  network_name       = module.vpc.network_name
-  subnets            = var.subnets
+  source                          = "./modules/subnets"
+  project_id                      = var.project_id
+  environment_prefix              = var.environment_prefix
+  network_name                    = module.vpc.network_name
+  routing_mode                    = var.routing_mode
+  delete_default_routes_on_create = var.delete_default_routes_on_create
+  subnets                         = var.subnets
+
 }
 
 module "cloud_nat_router" {

@@ -20,6 +20,18 @@ variable "network_name" {
   type        = string
 }
 
+variable "delete_default_routes_on_create" {
+  type        = bool
+  description = "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted,"
+  default     = false
+}
+
+variable "routing_mode" {
+  type        = string
+  default     = "GLOBAL"
+  description = "The network routing mode (default 'GLOBAL')."
+}
+
 variable "subnets" {
   description = "The list of subnets to be created."
   type        = list(map(string))
