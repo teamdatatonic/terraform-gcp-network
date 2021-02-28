@@ -7,7 +7,7 @@
  - Cloud router nat 
 
 ## Usage
-You can go to the examples folder for each module usage, however the usage of the resource modules could be like this in your own main.tf file:
+You can go to the examples folder for each module usage, the usage of the resource modules could be like this in your own main.tf file:
 
 ```hcl
 module "network_stack" {
