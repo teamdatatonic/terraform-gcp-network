@@ -23,9 +23,9 @@ No requirements.
 
 | Name | Description |
 |------|-------------|
-| subnet\_id | The created firewall rule resources |
-| subnet\_name | The created firewall rule resources |
+| subnet\_id | The created Subnet IDs. |
+| subnet\_name | The created Subnet Resource Names. |
 | subnet\_url | The URI of the created resource. |
-| subnets\_ips | List of subnet ups |
+| subnets\_ips | List of Subnet IPs |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
