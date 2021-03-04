@@ -27,7 +27,7 @@ variable "auto_create_subnetworks" {
 variable "delete_default_routes_on_create" {
   type        = bool
   description = "If set, ensure that all routes within the network specified whose names begin with 'default-route' and with a next hop of 'default-internet-gateway' are deleted,"
-  default     = false
+  default     = true
 }
 
 variable "mtu" {
@@ -40,4 +40,10 @@ variable "mtu" {
 variable "environment_prefix" {
   description = "The GCP envioment where the vpc will be created."
   type        = string
+}
+
+variable "default_internet_gateway" {
+  type        = bool
+  description = "If True, sets up the 0.0.0.0/0 next hop internet gateway"
+  default     = false
 }

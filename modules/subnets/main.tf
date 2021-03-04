@@ -8,12 +8,12 @@ locals {
       private_ip_google_access = lookup(subnet, "private_ip_google_access", false)
       description              = lookup(subnet, "description", null)
 
-      enable_logs = lookup(subnet, "enable_logs", false) ? [{
+      enable_logs = [{
         aggregation_interval = lookup(subnet, "logs_interval", "INTERVAL_5_SEC")
         flow_sampling        = lookup(subnet, "logs_sampling", "0.5")
         metadata             = lookup(subnet, "logs_metadata", "INCLUDE_ALL_METADATA")
         filter_expr          = lookup(subnet, "logs_filter_expr", true)
-      }] : []
+      }]
     }
   ])
   iterator = { for subnet in local.network_subnets : subnet.subnet_name => subnet }

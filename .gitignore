@@ -9,3 +9,6 @@
 key.json
 tfplan.enc.zip
 .envrc
+
+# CZ
+node_modules/
