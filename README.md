@@ -6,6 +6,16 @@
  - Firwall rules
  - Cloud router nat 
 
+## Prerequisites 
+- Terraform 0.14+ ([tfswitch](https://warrensbox.github.io/terraform-switcher/) is the best way to install/manage)
+- [Pre-commit](https://pre-commit.com/) 
+- [commitizen](https://github.com/commitizen/cz-cli)
+
+### Local Setup 
+- install pre-commit: `brew install pre-commit`.
+- install the git hook scripts: `pre-commit install`.
+
+
 ## Usage
 You can go to the examples folder for each module usage, the usage of the resource modules could be like this in your own main.tf file:
 
@@ -93,3 +103,8 @@ No provider.
 | vpc\_network | The created network |
 
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+
+### Contributing 
+This repository enforces using [commitizen]((https://github.com/commitizen/cz-cli)) to structure the git commit messages  
+- `git add`
+- `git cz`

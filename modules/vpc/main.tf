@@ -6,5 +6,15 @@ resource "google_compute_network" "core_vpc_network" {
   delete_default_routes_on_create = var.delete_default_routes_on_create
   description                     = var.description
   mtu                             = var.mtu
+}
 
+resource "google_compute_route" "default-internet-gateway" {
+  count = var.default_internet_gateway ? 1 : 0
+
+  name             = "default-internet-gateway"
+  project          = var.project_id
+  dest_range       = "0.0.0.0/0"
+  network          = google_compute_network.core_vpc_network.name
+  next_hop_gateway = "default-internet-gateway"
+  priority         = 100
 }
