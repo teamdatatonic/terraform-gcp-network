@@ -14,6 +14,7 @@ No requirements.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| default\_region | Allows a default region to be passed in | `string` | `""` | no |
 | environment\_prefix | The GCP envioment where the subnets will be created. | `string` | n/a | yes |
 | network\_name | The name of the vpc network. | `string` | n/a | yes |
 | project\_id | The ID of the project where this VPC will be created. | `string` | n/a | yes |

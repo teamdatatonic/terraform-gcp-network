@@ -18,3 +18,9 @@ variable "environment_prefix" {
   description = "The GCP envioment where the subnets will be created."
   type        = string
 }
+
+variable "default_region" {
+  description = "Allows a default region to be passed in"
+  type        = string
+  default     = ""
+}
