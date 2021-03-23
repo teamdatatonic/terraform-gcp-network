@@ -14,7 +14,7 @@ module "subnets" {
   environment_prefix = var.environment_prefix
   network_name       = module.vpc.network_name
   subnets            = var.subnets
-
+  default_region     = var.region
 }
 
 module "cloud_nat_router" {

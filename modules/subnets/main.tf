@@ -26,7 +26,7 @@ resource "google_compute_subnetwork" "subnetwork" {
   network                  = var.network_name
   name                     = "${var.project_id}-${each.value.subnet_name}-${var.environment_prefix}"
   ip_cidr_range            = each.value.ip_cidr_range
-  region                   = each.value.region
+  region                   = lookup(each.value, "region", var.default_region)
   description              = each.value.description
   private_ip_google_access = each.value.private_ip_google_access
 
