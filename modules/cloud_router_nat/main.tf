@@ -26,7 +26,7 @@ resource "google_compute_router_nat" "nat" {
   enable_endpoint_independent_mapping = lookup(each.value, "enable_endpoint_independent_mapping", null)
 
   dynamic "subnetwork" {
-    for_each = each.value.subnetwork == null ? {} : map("temp", each.value.subnetwork)
+    for_each = each.value.subnetwork == null ? [] : [each.value.subnetwork]
     content {
       name                    = "${var.project_id}-${lookup(subnetwork.value, "name")}-${var.environment_prefix}"
       source_ip_ranges_to_nat = lookup(subnetwork.value, "source_ip_ranges_to_nat")
@@ -37,7 +37,7 @@ resource "google_compute_router_nat" "nat" {
   }
 
   dynamic "log_config" {
-    for_each = each.value.log_config == null ? {} : map("temp", each.value.log_config)
+    for_each = each.value.log_config == null ? [] : [each.value.log_config]
 
     content {
       enable = lookup(log_config.value, "enable")
